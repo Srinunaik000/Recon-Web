@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Recon-Web
 =======
 ### Recon Tool Website
@@ -36,4 +35,3 @@ chmod +x recon.py
 python3 recon.py
 
 - it start's a server on your loopback address http://127.0.0.1:5000 you can visit this address to access web Recon Interface
->>>>>>> main
