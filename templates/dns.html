@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>DNS Records</h1>
+<form method="post">
+    <input type="text" name="domain" placeholder="Enter Domain">
+    <input type="submit" value="Get DNS Records">
+</form>
+
+{% if dns_records_result %}
+<div class="tabs">
+    <button class="tablinks" onclick="openTab(event, 'A')">A Records</button>
+    <button class="tablinks" onclick="openTab(event, 'AAAA')">AAAA Records</button>
+    <button class="tablinks" onclick="openTab(event, 'MX')">MX Records</button>
+    <button class="tablinks" onclick="openTab(event, 'CNAME')">CNAME Records</button>
+    <button class="tablinks" onclick="openTab(event, 'TXT')">TXT Records</button>
+    <button class="tablinks" onclick="openTab(event, 'NS')">NS Records</button>
+    <button class="tablinks" onclick="openTab(event, 'SOA')">SOA Records</button>
+</div>
+
+<div id="A" class="tabcontent">
+    <h3>A Records</h3>
+    <pre>{{ dns_records_result.A | join('\n') }}</pre>
+</div>
+
+<div id="AAAA" class="tabcontent">
+    <h3>AAAA Records</h3>
+    <pre>{{ dns_records_result.AAAA | join('\n') }}</pre>
+</div>
+
+<div id="MX" class="tabcontent">
+    <h3>MX Records</h3>
+    <pre>{{ dns_records_result.MX | join('\n') }}</pre>
+</div>
+
+<div id="CNAME" class="tabcontent">
+    <h3>CNAME Records</h3>
+    <pre>{{ dns_records_result.CNAME | join('\n') }}</pre>
+</div>
+
+<div id="TXT" class="tabcontent">
+    <h3>TXT Records</h3>
+    <pre>{{ dns_records_result.TXT | join('\n') }}</pre>
+</div>
+
+<div id="NS" class="tabcontent">
+    <h3>NS Records</h3>
+    <pre>{{ dns_records_result.NS | join('\n') }}</pre>
+</div>
+
+<div id="SOA" class="tabcontent">
+    <h3>SOA Records</h3>
+    <pre>{{ dns_records_result.SOA | join('\n') }}</pre>
+</div>
+
+<script>
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";  
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";  
+    evt.currentTarget.className += " active";
+}
+
+// Open the first tab by default
+document.getElementsByClassName("tablinks")[0].click();
+</script>
+
+<style>
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Tab buttons */
+.tablinks {
+    background-color: #ddd;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* Tab button hover */
+.tablinks:hover {
+    background-color: #ccc;
+}
+
+/* Tab content */
+.tabcontent {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+/* Active tab link */
+.tablinks.active {
+    background-color: #ccc;
+}
+</style>
+{% endif %}
+{% endblock %}

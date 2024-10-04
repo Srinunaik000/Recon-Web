@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>WHOIS Lookup</h1>
+<form action="/whois" method="POST">
+    <input type="text" name="domain" placeholder="Enter domain">
+    <button type="submit">Lookup</button>
+</form>
+{% if whois_result %}
+<pre>{{ whois_result }}</pre>
+{% endif %}
+{% endblock %}

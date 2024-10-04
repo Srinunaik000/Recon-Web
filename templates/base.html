@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('whois_lookup_page') }}">WHOIS Lookup</a></li>
+            <li><a href="{{ url_for('subdomain_enumeration_page') }}">Subdomain Enumeration</a></li>
+            <li><a href="{{ url_for('dns_records_page') }}">DNS Records</a></li>
+            <li><a href="{{ url_for('nmap_scan_page') }}">Network Scan</a></li>
+            <li><a href="{{ url_for('reverse_dns_page') }}">Reverse DNS Lookup</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Reverse DNS Lookup</h1>
+<form method="post">
+    <input type="text" name="ip_address" placeholder="Enter IP Address">
+    <input type="submit" value="Lookup">
+</form>
+{% if reverse_dns_result %}
+<pre>{{ reverse_dns_result }}</pre>
+{% endif %}
+{% endblock %}

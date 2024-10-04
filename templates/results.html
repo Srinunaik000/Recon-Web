@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results for {{ domain }}</title>
+</head>
+<body>
+    <h1>Results for {{ domain }}</h1>
+    
+    <h2>WHOIS Data</h2>
+    <pre>{{ whois_result }}</pre>
+    
+    <h2>Subdomains</h2>
+    <pre>{{ subdomains_result }}</pre>
+    
+    <h2>DNS Records</h2>
+    <pre>{{ dns_records_result }}</pre>
+    
+    <h2>Port Scan</h2>
+    <pre>{{ port_scan_result }}</pre>
+    
+    <h2>Reverse DNS</h2>
+    <pre>{{ reverse_dns_result }}</pre>
+    
+    <h2>ASN/IP Information</h2>
+    <pre>{{ asn_ip_result }}</pre>
+    
+    <h2>SSL Certificate</h2>
+    <pre>{{ ssl_cert_result }}</pre>
+
+    <a href="/">Go Back</a>
+</body>
+</html>

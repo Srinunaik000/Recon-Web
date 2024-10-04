@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Subdomain Enumeration</h1>
+<form method="post">
+    <input type="text" name="domain" placeholder="Enter Domain">
+    <input type="submit" value="Enumerate">
+</form>
+{% if subdomains_result %}
+<pre>{{ subdomains_result }}</pre>
+{% endif %}
+{% endblock %}

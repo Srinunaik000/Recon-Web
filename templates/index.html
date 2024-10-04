@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Enter Domain Name</h1>
+<form method="post">
+    <input type="text" name="domain" placeholder="example.com">
+    <input type="submit" value="Submit">
+</form>
+{% if error %}
+<p style="color: red;">{{ error }}</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Network Scan</h1>
+<form method="post">
+    <input type="text" name="target" placeholder="Enter IP or Domain">
+    <input type="submit" value="Scan">
+</form>
+
+{% if nmap_result %}
+    <h2>Scan Results</h2>
+    <pre>{{ nmap_result }}</pre>
+{% endif %}
+{% endblock %}
