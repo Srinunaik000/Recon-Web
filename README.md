@@ -1,5 +1,4 @@
 # Recon-Web
-=======
 ### Recon Tool Website
 This is a web-based recon tool built using Flask, designed to perform WHOIS lookups, subdomain enumeration, DNS record gathering, Nmap scans, and reverse DNS lookups.
 
@@ -13,7 +12,7 @@ This is a web-based recon tool built using Flask, designed to perform WHOIS look
 ### Prerequisites
 Before running this project, ensure you have the following installed:
 
-- Python Packages
+## Python Packages
 - Flask: A lightweight web framework for Python.
 - python-whois: A library to perform WHOIS lookups.
 - dnspython: A library for DNS queries in Python.
